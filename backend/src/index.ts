@@ -3,9 +3,11 @@ import path from "path";
 import fs from "fs";
 import { createHandler } from "graphql-http/lib/use/express";
 import { schema, rootValue } from "./graphql";
+import cors from "cors";
 
 const app = express();
 
+app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
